@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ProyectoFinal</string>
     <string name="rellenador">Falta Texto</string>
+    <string name="cerrar">Cerrar Sesión</string>
+    <string name="nombre_usuario">Jorge Ortiz</string>
+    <string name="competencias">Administrador, Desarrollador</string>
 </resources>

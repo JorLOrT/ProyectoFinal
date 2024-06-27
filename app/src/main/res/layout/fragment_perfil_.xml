@@ -4,8 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/secondary"
+    android:background="@color/white"
     tools:context=".PerfilFragment">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        android:src="@drawable/camion_fondo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guia1"
+        android:background="@color/secondary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        />
 
     <ImageView
         android:id="@+id/imageView"
@@ -16,26 +28,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.30"/>
+        app:layout_constraintGuide_percent="0.55"/>
 
     <TextView
+        android:id="@+id/nombreUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rellenador"
+        android:text="@string/nombre_usuario"
         app:layout_constraintBottom_toBottomOf="@id/guia2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guia1"
         app:layout_constraintVertical_bias="0.5"
         android:textSize="25sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         />
 
@@ -44,14 +57,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35"/>
+        app:layout_constraintGuide_percent="0.60"/>
 
     <TextView
+        android:id="@+id/competencias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rellenador"
+        android:text="@string/competencias"
         android:textStyle="italic"
-        android:textColor="@color/gray"
+        android:textColor="@color/secondary"
+        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintTop_toBottomOf="@+id/guia2"
         app:layout_constraintBottom_toBottomOf="@id/guia3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,13 +77,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"/>
+        app:layout_constraintGuide_percent="0.65" />
 
-    <TextView
+    <Button
+        android:id="@+id/cerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rellenador"
+        android:text="@string/cerrar"
         android:textColor="@color/white"
+        android:backgroundTint="@color/principal"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/guia3"
