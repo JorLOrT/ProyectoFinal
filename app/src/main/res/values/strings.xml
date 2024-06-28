@@ -12,5 +12,7 @@
     <string name="ayuda_requerido">Requerido</string>
     <string name="texto_sin_cuenta">¿No tienes cuenta?</string>
     <string name="texto_registrarse">Registrarse</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
