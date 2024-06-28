@@ -118,7 +118,7 @@
         app:layout_constraintBottom_toTopOf="@id/guia3_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintVertical_bias="0.85"
         android:background="@color/gray"
         >
 
@@ -169,7 +169,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:orientation="horizontal"
         android:color="@color/gray"
         app:layout_constraintVertical_bias="0.1"
         />
