@@ -5,14 +5,17 @@
     <string name="nombre_usuario">Jorge Ortiz</string>
     <string name="competencias">Administrador, Desarrollador</string>
     <string name="titulo_login">Log In</string>
+    <string name="titulo_signup">Crear Cuenta</string>
     <string name="titulo_email">Email</string>
     <string name="titulo_password">Password</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirmar Password</string>
     <string name="ayuda_requerido">Requerido</string>
     <string name="texto_sin_cuenta">¿No tienes cuenta?</string>
+    <string name="texto_con_cuenta">¿Ya tienes cuenta?</string>
     <string name="texto_registrarse">Registrarse</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="texto_login">Iniciar Sesión</string>
+
 
 </resources>
