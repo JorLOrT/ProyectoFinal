@@ -4,4 +4,13 @@
     <string name="cerrar">Cerrar Sesión</string>
     <string name="nombre_usuario">Jorge Ortiz</string>
     <string name="competencias">Administrador, Desarrollador</string>
+    <string name="titulo_login">Log In</string>
+    <string name="titulo_email">Email</string>
+    <string name="titulo_password">Password</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="ayuda_requerido">Requerido</string>
+    <string name="texto_sin_cuenta">¿No tienes cuenta?</string>
+    <string name="texto_registrarse">Registrarse</string>
+
 </resources>
