@@ -20,4 +20,9 @@
         android:name="com.example.proyectofinal.SignUp_Fragment"
         android:label="fragment_sign_up_"
         tools:layout="@layout/fragment_sign_up_" />
+    <fragment
+        android:id="@+id/recyclerFragment"
+        android:name="com.example.proyectofinal.RecyclerFragment"
+        android:label="fragment_recycler"
+        tools:layout="@layout/fragment_recycler" />
 </navigation>
