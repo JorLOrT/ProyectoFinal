@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectofinal.Item
 import com.example.proyectofinal.R
 
-class ItemsAdapter(var items: MutableList<Item> ) :RecyclerView.Adapter<ItemsViewHolder>() {
+class ItemsAdapter(var items: MutableList<Item>, private val onClickListener: (Item) ->Unit ) :RecyclerView.Adapter<ItemsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_objeto, parent, false)
         return ItemsViewHolder(itemView)
@@ -18,7 +18,7 @@ class ItemsAdapter(var items: MutableList<Item> ) :RecyclerView.Adapter<ItemsVie
 
     override fun onBindViewHolder(holder: ItemsViewHolder, position: Int) {
         val item = items[position]
-        holder.render(item)
+        holder.render(item, onClickListener)
     }
 
     fun addItem(item: Item) {
