@@ -79,7 +79,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/cerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,6 +92,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.2"
+        app:rippleColor="@color/secondary"
+        app:icon="@drawable/logout_24dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

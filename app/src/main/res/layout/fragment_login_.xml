@@ -77,7 +77,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -113,20 +112,42 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.70" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/logear_cuenta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/titulo_login"
+        android:text="@string/btn_login"
         android:textColor="@color/white"
         android:backgroundTint="@color/principal"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:layout_marginHorizontal="50dp"
         app:layout_constraintTop_toBottomOf="@id/guia3_login"
+        app:layout_constraintBottom_toTopOf="@id/logear_google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:icon="@drawable/baseline_co_present_24"
+        app:iconGravity="textStart"
+        app:rippleColor="@color/secondary"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logear_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_login_google"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/principal"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="50dp"
+        app:layout_constraintTop_toBottomOf="@id/logear_cuenta"
         app:layout_constraintBottom_toTopOf="@id/guia4_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.5"
+        app:icon="@drawable/ic_google"
+        app:iconGravity="textStart"
+        app:rippleColor="@color/secondary"
         />
 
     <androidx.constraintlayout.widget.Guideline

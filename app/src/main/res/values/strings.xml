@@ -8,6 +8,8 @@
     <string name="titulo_signup">Crear Cuenta</string>
     <string name="titulo_email">Email</string>
     <string name="titulo_password">Password</string>
+    <string name="btn_login">Iniciar Sesión</string>
+    <string name="btn_login_google">Iniciar Sesión con Google</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirmar Password</string>
@@ -21,6 +23,7 @@
     <string name="menu_scan">Scan</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">217492763247-6f7i7dudp0qdi9uv6e5v4jdqmlufec49.apps.googleusercontent.com</string>
 
 
 </resources>

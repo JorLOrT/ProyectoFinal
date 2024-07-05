@@ -9,6 +9,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import com.google.android.gms.auth.api.identity.Identity
+import com.google.android.gms.auth.api.identity.SignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 
 class Login_Fragment : Fragment(R.layout.fragment_login_) {
@@ -16,6 +19,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
     lateinit var input_email: EditText
     lateinit var input_password: EditText
     lateinit var btn_login: Button
+    lateinit var btn_google: Button
     lateinit var btn_signup: TextView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,9 +27,13 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
         input_email = view.findViewById<EditText>(R.id.input_email)
         input_password = view.findViewById<EditText>(R.id.input_password)
         btn_login = view.findViewById<Button>(R.id.logear_cuenta)
+        btn_google = view.findViewById<Button>(R.id.logear_google)
         btn_signup = view.findViewById<TextView>(R.id.texto_registrarse)
-        irSignUp()
+
+        // Logeo con usuario y contraseña
         logearUsuario()
+        // Navegar a la vista de registro
+        irSignUp()
     }
 
     fun logearUsuario(){
@@ -43,6 +51,12 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
                     }
                 }
             }
+        }
+    }
+
+    fun logerarGoogle(){
+        btn_google.setOnClickListener {
+            val configuracion = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()
         }
     }
 
