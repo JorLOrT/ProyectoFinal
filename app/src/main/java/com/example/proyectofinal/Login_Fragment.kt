@@ -41,7 +41,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
                 return@setOnClickListener
             }
             else{
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(input_email.text.toString(), input_password.text.toString()).addOnCompleteListener {
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(input_email.text.toString(), input_password.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
                         cambiarVista(it.result?.user?.email ?: "", ProviderType.BASIC)
                     }else{
@@ -68,13 +68,14 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
 
     private fun irSignUp(){
         btn_signup.setOnClickListener {
+            view?.findNavController()?.navigateUp()
             view?.findNavController()?.navigate(R.id.action_login_Fragment_to_signUp_Fragment)
         }
     }
 
     private fun cambiarVista(email: String, provider: ProviderType){
         val resultadoClic = bundleOf("email" to email, "provider" to provider.name)
-        view?.findNavController()?.navigate(R.id.action_login_Fragment_to_perfilFragment)
+        view?.findNavController()?.navigate(R.id.action_login_Fragment_to_contenedor_interno, resultadoClic)
     }
 
 }

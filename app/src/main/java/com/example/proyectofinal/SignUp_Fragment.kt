@@ -68,6 +68,6 @@ class SignUp_Fragment : Fragment(R.layout.fragment_sign_up_) {
 
     private fun cambiarVista(email: String, provider: ProviderType){
         val resultadoClic = bundleOf("email" to email, "provider" to provider.name)
-        view?.findNavController()?.navigate(R.id.action_signUp_Fragment_to_perfilFragment,resultadoClic)
+        view?.findNavController()?.navigate(R.id.action_signUp_Fragment_to_contenedor_interno,resultadoClic)
     }
 }

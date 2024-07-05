@@ -6,6 +6,14 @@
     app:startDestination="@id/login_Fragment">
 
     <fragment
+        android:id="@+id/contenedor_interno"
+        android:name="com.example.proyectofinal.ContenedorInterno"
+        android:label="contenedor_interno"
+        tools:layout="@layout/fragment_contenedor_interno"
+        >
+
+    </fragment>
+    <fragment
         android:id="@+id/perfilFragment"
         android:name="com.example.proyectofinal.PerfilFragment"
         android:label="fragment_perfil_"
@@ -23,8 +31,8 @@
             android:id="@+id/action_login_Fragment_to_signUp_Fragment"
             app:destination="@id/signUp_Fragment" />
         <action
-            android:id="@+id/action_login_Fragment_to_perfilFragment"
-            app:destination="@id/perfilFragment" />
+            android:id="@+id/action_login_Fragment_to_contenedor_interno"
+            app:destination="@id/contenedor_interno" />
     </fragment>
     <fragment
         android:id="@+id/signUp_Fragment"
@@ -35,8 +43,8 @@
             android:id="@+id/action_signUp_Fragment_to_login_Fragment"
             app:destination="@id/login_Fragment" />
         <action
-            android:id="@+id/action_signUp_Fragment_to_perfilFragment"
-            app:destination="@id/perfilFragment" />
+            android:id="@+id/action_signUp_Fragment_to_contenedor_interno"
+            app:destination="@id/contenedor_interno" />
     </fragment>
     <fragment
         android:id="@+id/recyclerFragment"
