@@ -10,6 +10,7 @@ import com.example.proyectofinal.adapter.ItemsAdapter
 class RecyclerFragment : Fragment(R.layout.fragment_recycler) {
 
     private lateinit var itemAdapter: ItemsAdapter
+    private var itemMutableList:MutableList<Item> = ItemsProvider.itemsList.toMutableList()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -18,12 +19,22 @@ class RecyclerFragment : Fragment(R.layout.fragment_recycler) {
 
     private fun initReclerView(view: View) {
         val itemRecycler = view.findViewById<RecyclerView>(R.id.recycler_widget)
-        itemAdapter = ItemsAdapter(ItemsProvider.itemsList) { item -> onItemSelected(item) }
+        itemAdapter = ItemsAdapter(
+            items = itemMutableList,
+            onClickListener = { item:Item -> onItemSelected(item) },
+            onClickDelete = { posicion -> onDeleteItem(posicion) }
+        )
         itemRecycler.layoutManager = LinearLayoutManager(this.context)
         itemRecycler.adapter = itemAdapter
     }
 
-    fun onItemSelected(item: Item){
+    private fun onDeleteItem(posicion: Int) {
+        itemMutableList.removeAt(posicion)
+        itemAdapter.notifyItemRemoved(posicion)
+        itemAdapter.notifyItemRangeChanged(posicion, itemMutableList.size)
+    }
+
+    private fun onItemSelected(item: Item){
         Toast.makeText(this.context, "Seleccionaste ${item.nombre}", Toast.LENGTH_SHORT).show()
     }
 
