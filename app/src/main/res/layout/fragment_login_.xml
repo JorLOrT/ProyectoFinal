@@ -46,19 +46,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.45"/>
 
-    <TextView
-        android:id="@+id/titulo_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_email"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintVertical_bias="0.05"
-        app:layout_constraintTop_toBottomOf="@+id/guia2_login"
-        app:layout_constraintBottom_toBottomOf="@id/guia3_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -73,11 +60,12 @@
         app:startIconDrawable="@drawable/baseline_account_circle_24"
         app:endIconMode="clear_text"
         app:layout_constraintTop_toBottomOf="@id/guia2_login"
-        app:layout_constraintBottom_toTopOf="@id/guia3_login"
+        app:layout_constraintBottom_toTopOf="@id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.2"
         android:background="@color/gray"
+        app:layout_constraintVertical_chainStyle="spread"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -88,19 +76,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/titulo_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_password"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintVertical_bias="0.55"
-        app:layout_constraintTop_toBottomOf="@+id/guia2_login"
-        app:layout_constraintBottom_toBottomOf="@id/guia3_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -114,7 +90,7 @@
         android:inputType="textEmailAddress"
         app:startIconDrawable="@drawable/baseline_app_blocking_24"
         app:endIconMode="password_toggle"
-        app:layout_constraintTop_toBottomOf="@id/guia2_login"
+        app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintBottom_toTopOf="@id/guia3_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.80" />
+        app:layout_constraintGuide_percent="0.70" />
 
     <Button
         android:id="@+id/logear_cuenta"
