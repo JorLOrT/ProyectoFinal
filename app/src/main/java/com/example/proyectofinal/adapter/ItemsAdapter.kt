@@ -20,10 +20,4 @@ class ItemsAdapter(var items: MutableList<Item>, private val onClickListener: (I
         val item = items[position]
         holder.render(item, onClickListener, onClickDelete)
     }
-
-    fun addItem(item: Item) {
-        items.add(0,item)
-        notifyItemInserted(0)
-    }
-
 }

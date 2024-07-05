@@ -7,6 +7,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectofinal.adapter.ItemsAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+
 class RecyclerFragment : Fragment(R.layout.fragment_recycler) {
 
     private lateinit var itemAdapter: ItemsAdapter
@@ -26,6 +28,17 @@ class RecyclerFragment : Fragment(R.layout.fragment_recycler) {
         )
         itemRecycler.layoutManager = LinearLayoutManager(this.context)
         itemRecycler.adapter = itemAdapter
+
+        val btnAdd = view.findViewById<FloatingActionButton>(R.id.add_button)
+        btnAdd.setOnClickListener {
+            crearItem()
+        }
+    }
+
+    private fun crearItem() {
+        val item = Item("coso", "coso otro")
+        itemMutableList.add(0,item)
+        itemAdapter.notifyItemInserted(0)
     }
 
     private fun onDeleteItem(posicion: Int) {

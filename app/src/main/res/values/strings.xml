@@ -24,6 +24,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_web_client_id">217492763247-6f7i7dudp0qdi9uv6e5v4jdqmlufec49.apps.googleusercontent.com</string>
+    <string name="agregar_item">agregar item</string>
 
 
 </resources>
