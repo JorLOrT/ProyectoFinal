@@ -6,21 +6,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RecyclerFragment">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filtro_items"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxBackgroundColor="@color/secondary"
+        android:hint="@string/busqueda_input"
+        android:textColorHint="@color/white"
+        android:inputType="text"
+        app:endIconMode="clear_text"
+        app:startIconTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guia_recycler"
+        app:startIconDrawable="@drawable/search_16dp"
+        app:layout_constraintVertical_bias="0.7"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_filtro_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_widget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guia_recycler"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/secondary"
+        android:backgroundTint="@color/tertiary"
         android:contentDescription="@string/agregar_item"
         android:src="@drawable/baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"

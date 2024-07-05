@@ -20,4 +20,9 @@ class ItemsAdapter(var items: MutableList<Item>, private val onClickListener: (I
         val item = items[position]
         holder.render(item, onClickListener, onClickDelete)
     }
+
+    fun mostrarListaFiltrada(items: MutableList<Item>){
+        this.items = items
+        notifyDataSetChanged()
+    }
 }
