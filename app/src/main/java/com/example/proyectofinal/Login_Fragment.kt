@@ -24,7 +24,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
 
         input_email = view.findViewById<EditText>(R.id.input_email)
         input_password = view.findViewById<EditText>(R.id.input_password)
-        btn_login = view.findViewById<Button>(R.id.logear_cuenta)
+        btn_login = view.findViewById<Button>(R.id.ac_logear_cuenta)
         btn_google = view.findViewById<Button>(R.id.logear_google)
         btn_signup = view.findViewById<TextView>(R.id.texto_registrarse)
 
@@ -75,7 +75,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
 
     private fun cambiarVista(email: String, provider: ProviderType){
         val resultadoClic = bundleOf("email" to email, "provider" to provider.name)
-        view?.findNavController()?.navigate(R.id.action_login_Fragment_to_contenedor_interno, resultadoClic)
+        view?.findNavController()?.navigate(R.id.action_login_Fragment_to_perfilFragment, resultadoClic)
     }
 
 }

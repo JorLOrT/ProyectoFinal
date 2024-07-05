@@ -113,7 +113,7 @@
         app:layout_constraintGuide_percent="0.70" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/logear_cuenta"
+        android:id="@+id/ac_logear_cuenta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_login"
@@ -140,7 +140,7 @@
         android:backgroundTint="@color/principal"
         android:textSize="15sp"
         android:layout_marginHorizontal="50dp"
-        app:layout_constraintTop_toBottomOf="@id/logear_cuenta"
+        app:layout_constraintTop_toBottomOf="@id/ac_logear_cuenta"
         app:layout_constraintBottom_toTopOf="@id/guia4_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
