@@ -2,6 +2,7 @@ package com.example.proyectofinal
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUp_Fragment : Fragment(R.layout.fragment_sign_up_) {
 
@@ -43,7 +45,7 @@ class SignUp_Fragment : Fragment(R.layout.fragment_sign_up_) {
             else{
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(input_email.text.toString(), input_password.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
-                        cambiarVista(it.result?.user?.email ?: "", ProviderType.BASIC)
+                        cambiarVista(it.result?.user?.email ?: "")
                     }else{
                         mostrarAlerta("Error", "Error al registrarse")
                     }
@@ -66,8 +68,14 @@ class SignUp_Fragment : Fragment(R.layout.fragment_sign_up_) {
         }
     }
 
-    private fun cambiarVista(email: String, provider: ProviderType){
-        val resultadoClic = bundleOf("email" to email, "provider" to provider.name)
-        view?.findNavController()?.navigate(R.id.action_signUp_Fragment_to_perfilFragment,resultadoClic)
+    private fun cambiarVista(email: String){
+        val db = FirebaseFirestore.getInstance()
+        val usuario = hashMapOf("email" to email, "provider" to "Administrador")
+        db.collection("users").add(usuario).addOnSuccessListener{
+            Log.d("Insertado", "Insertado Correcto")
+        }.addOnFailureListener{
+            Log.d("Error", "Error al insertar")
+        }
+        view?.findNavController()?.navigate(R.id.action_signUp_Fragment_to_perfilFragment)
     }
 }

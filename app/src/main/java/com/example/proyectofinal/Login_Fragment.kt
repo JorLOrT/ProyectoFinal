@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 
@@ -19,6 +20,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
     lateinit var btn_login: Button
     lateinit var btn_google: Button
     lateinit var btn_signup: TextView
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -43,7 +45,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
             else{
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(input_email.text.toString(), input_password.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
-                        cambiarVista(it.result?.user?.email ?: "", ProviderType.BASIC)
+                        cambiarVista(it.result?.user?.email ?: "")
                     }else{
                         mostrarAlerta("Error", "Error al logearse")
                     }
@@ -55,6 +57,10 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
     fun logerarGoogle(){
         btn_google.setOnClickListener {
             val configuracion = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()
+
+            val googleClient = GoogleSignIn.getClient(this.requireContext(), configuracion)
+            startActivity(googleClient.signInIntent)
+
         }
     }
 
@@ -73,9 +79,9 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
         }
     }
 
-    private fun cambiarVista(email: String, provider: ProviderType){
-        val resultadoClic = bundleOf("email" to email, "provider" to provider.name)
-        view?.findNavController()?.navigate(R.id.action_login_Fragment_to_perfilFragment, resultadoClic)
+    private fun cambiarVista(email: String){
+        val usuario = bundleOf("email" to email, "provider" to "Administrador")
+        view?.findNavController()?.navigate(R.id.action_login_Fragment_to_perfilFragment, usuario)
     }
 
 }

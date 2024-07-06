@@ -25,7 +25,8 @@ class PerfilFragment : Fragment(R.layout.fragment_perfil_) {
 
         btnSalir.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            findNavController().navigate(R.id.action_perfilFragment_to_login_Fragment)
+            findNavController().popBackStack()
+            //findNavController().navigate(R.id.action_perfilFragment_to_login_Fragment)
         }
     }
 }
