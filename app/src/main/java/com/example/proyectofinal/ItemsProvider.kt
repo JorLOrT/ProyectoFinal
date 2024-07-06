@@ -1,11 +1,27 @@
 package com.example.proyectofinal
 
+import android.util.Log
+import com.google.firebase.firestore.FirebaseFirestore
+
 class ItemsProvider {
-    companion object{
-        var itemsList = arrayListOf<Item>(
-            Item("Item 1", "https://i5.walmartimages.com/asr/90e2866c-0fe7-498e-a5b9-7d5230ffee10.7e305c0c3853c5eac918626757ca8a22.jpeg"),
-            Item("Item 2", "https://i5.walmartimages.com/asr/90e2866c-0fe7-498e-a5b9-7d5230ffee10.7e305c0c3853c5eac918626757ca8a22.jpeg"),
-            Item("Item 3", "https://i5.walmartimages.com/asr/90e2866c-0fe7-498e-a5b9-7d5230ffee10.7e305c0c3853c5eac918626757ca8a22.jpeg"),
-        )
+    private val db = FirebaseFirestore.getInstance()
+
+    fun getItems(): List<Item> {
+        val itemsList = mutableListOf<Item>()
+
+        db.collection("items")
+            .get()
+            .addOnSuccessListener { snapshot ->
+                for (document in snapshot.documents) {
+                    val item = document.toObject(Item::class.java)
+                    if (item != null) {
+                        itemsList.add(item)
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+            }
+
+        return itemsList.toList()
     }
 }

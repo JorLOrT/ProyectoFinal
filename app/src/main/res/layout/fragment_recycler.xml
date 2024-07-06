@@ -44,6 +44,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.18" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_widget"
         android:layout_width="match_parent"

@@ -9,6 +9,9 @@ import com.example.proyectofinal.Item
 import com.example.proyectofinal.R
 
 class ItemsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
+
+
     private val viewNombre = itemView.findViewById<TextView>(R.id.txtNombre)
     val imagen = itemView.findViewById<ImageView>(R.id.image_item)
     val btnDelete = itemView.findViewById<Button>(R.id.btn_borrar)

@@ -71,7 +71,9 @@ class SignUp_Fragment : Fragment(R.layout.fragment_sign_up_) {
     private fun cambiarVista(email: String){
         val db = FirebaseFirestore.getInstance()
         val usuario = hashMapOf("email" to email, "provider" to "Administrador")
-        db.collection("users").add(usuario).addOnSuccessListener{
+        // Para poder controlar la primary key
+        db.collection("users").document(email).set(usuario).
+        addOnSuccessListener{
             Log.d("Insertado", "Insertado Correcto")
         }.addOnFailureListener{
             Log.d("Error", "Error al insertar")
