@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Para mostrar el splash screen durante 1 segundo
         Thread.sleep(1000)
         pantallaSplash.setKeepOnScreenCondition{false}
 

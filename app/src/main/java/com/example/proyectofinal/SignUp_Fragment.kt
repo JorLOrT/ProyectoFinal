@@ -32,6 +32,7 @@ class SignUp_Fragment : Fragment(R.layout.fragment_sign_up_) {
         registrarUsuario()
     }
 
+    // Registrar usuario y crear su user en la base de datos
     fun registrarUsuario(){
         btn_signup.setOnClickListener {
             if(input_email.text.isEmpty() || input_password.text.isEmpty() || input_confirm_password.text.isEmpty()){
@@ -54,6 +55,7 @@ class SignUp_Fragment : Fragment(R.layout.fragment_sign_up_) {
         }
     }
 
+    // Mostrar alerta personalizada
     fun mostrarAlerta(tipo: String, mensaje: String){
         val msj = AlertDialog.Builder(this.context)
         msj.setTitle(tipo)
@@ -62,12 +64,14 @@ class SignUp_Fragment : Fragment(R.layout.fragment_sign_up_) {
         msj.show()
     }
 
+    // Ir al login
     private fun irLogin(){
         btn_login.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_signUp_Fragment_to_login_Fragment)
         }
     }
 
+    // Cambiar a perfil
     private fun cambiarVista(email: String){
         val db = FirebaseFirestore.getInstance()
         val usuario = hashMapOf("email" to email, "provider" to "Administrador")

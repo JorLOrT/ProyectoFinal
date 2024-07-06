@@ -64,6 +64,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
         }
     }
 
+    // Genera un mensaje de alerta personalizado
     fun mostrarAlerta(tipo: String, mensaje: String){
         val msj = AlertDialog.Builder(this.context)
         msj.setTitle(tipo)
@@ -72,6 +73,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
         msj.show()
     }
 
+    // Navegar a la vista de registro
     private fun irSignUp(){
         btn_signup.setOnClickListener {
             view?.findNavController()?.navigateUp()
@@ -79,6 +81,7 @@ class Login_Fragment : Fragment(R.layout.fragment_login_) {
         }
     }
 
+    // Navegar a la vista de perfil
     private fun cambiarVista(email: String){
         val usuario = bundleOf("email" to email, "provider" to "Administrador")
         view?.findNavController()?.navigate(R.id.action_login_Fragment_to_perfilFragment, usuario)
